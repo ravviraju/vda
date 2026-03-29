@@ -1,0 +1,12 @@
+import mongoose, { Schema, model, models } from 'mongoose';
+
+const ContactSchema = new Schema({
+  name: { type: String, required: true },
+  email: { type: String, required: true },
+  mobile: { type: String, required: true },
+  message: { type: String, required: true },
+  is_read: { type: Boolean, default: false },
+}, { timestamps: true });
+
+const Contact = models.Contact || model('Contact', ContactSchema);
+export default Contact;
