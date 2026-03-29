@@ -1,9 +1,8 @@
+'use client';
 import Link from 'next/link';
-import { useRouter } from 'next/router'; // Not functional in static page, but good for structure
+import { useRouter } from 'next/navigation'; // Corrected for App Router
 
 export default function AdminAuthPage() {
-  // In a real app, you'd use router.query or props to determine if it's login, register, etc.
-  // For this placeholder, we'll assume a generic auth page layout.
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
@@ -16,7 +15,7 @@ export default function AdminAuthPage() {
             Sign in to manage your account.
           </p>
         </div>
-        <form className="mt-8 space-y-6" action="#" method="POST">
+        <form className="mt-8 space-y-6" onSubmit={(e) => e.preventDefault()}>
           <input type="hidden" name="remember" value="true" />
           <div className="rounded-md shadow-sm -space-y-px">
             <div>

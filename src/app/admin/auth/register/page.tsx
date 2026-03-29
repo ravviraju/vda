@@ -1,3 +1,4 @@
+'use client';
 import Link from 'next/link';
 
 export default function AdminRegisterPage() {
@@ -12,7 +13,7 @@ export default function AdminRegisterPage() {
             Create a new admin account.
           </p>
         </div>
-        <form className="mt-8 space-y-6" action="#" method="POST">
+        <form className="mt-8 space-y-6" onSubmit={(e) => e.preventDefault()}>
           <div className="rounded-md shadow-sm -space-y-px">
             <div>
               <label htmlFor="name" className="sr-only">Full Name</label>
